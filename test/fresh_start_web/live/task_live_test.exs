@@ -6,7 +6,11 @@ defmodule FreshStartWeb.TaskLiveTest do
   alias FreshStart.Planner
 
   @create_attrs %{body: "some body", order: "some order", title: "some title"}
-  @update_attrs %{body: "some updated body", order: "some updated order", title: "some updated title"}
+  @update_attrs %{
+    body: "some updated body",
+    order: "some updated order",
+    title: "some updated title"
+  }
   @invalid_attrs %{body: nil, order: nil, title: nil}
 
   defp fixture(:task) do
@@ -25,7 +29,7 @@ defmodule FreshStartWeb.TaskLiveTest do
     test "lists all tasks", %{conn: conn, task: task} do
       {:ok, _index_live, html} = live(conn, Routes.task_index_path(conn, :index))
 
-      assert html =~ "Listing Tasks"
+      assert html =~ "Tasks"
       assert html =~ task.body
     end
 
@@ -33,7 +37,7 @@ defmodule FreshStartWeb.TaskLiveTest do
       {:ok, index_live, _html} = live(conn, Routes.task_index_path(conn, :index))
 
       assert index_live |> element("a", "New Task") |> render_click() =~
-        "New Task"
+               "New Task"
 
       assert_patch(index_live, Routes.task_index_path(conn, :new))
 
@@ -55,7 +59,7 @@ defmodule FreshStartWeb.TaskLiveTest do
       {:ok, index_live, _html} = live(conn, Routes.task_index_path(conn, :index))
 
       assert index_live |> element("#task-#{task.id} a", "Edit") |> render_click() =~
-        "Edit Task"
+               "Edit Task"
 
       assert_patch(index_live, Routes.task_index_path(conn, :edit, task))
 
@@ -95,7 +99,7 @@ defmodule FreshStartWeb.TaskLiveTest do
       {:ok, show_live, _html} = live(conn, Routes.task_show_path(conn, :show, task))
 
       assert show_live |> element("a", "Edit") |> render_click() =~
-        "Edit Task"
+               "Edit Task"
 
       assert_patch(show_live, Routes.task_show_path(conn, :edit, task))
 

@@ -88,6 +88,7 @@ defmodule FreshStartWeb do
       import Phoenix.View
 
       import FreshStartWeb.ErrorHelpers
+      import FreshStartWeb.InputHelpers
       import FreshStartWeb.Gettext
       alias FreshStartWeb.Router.Helpers, as: Routes
     end

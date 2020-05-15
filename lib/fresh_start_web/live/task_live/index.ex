@@ -17,18 +17,21 @@ defmodule FreshStartWeb.TaskLive.Index do
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
     |> assign(:page_title, "Edit Task")
+    |> assign(:page_heading, "Tasks")
     |> assign(:task, Planner.get_task!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
     |> assign(:page_title, "New Task")
+    |> assign(:page_heading, "Tasks")
     |> assign(:task, %Task{})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Tasks")
+    |> assign(:page_title, "List Tasks")
+    |> assign(:page_heading, "Tasks")
     |> assign(:task, nil)
   end
 

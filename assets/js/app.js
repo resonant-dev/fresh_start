@@ -12,6 +12,7 @@ import "../css/app.css";
 //     import {Socket} from "phoenix"
 //     import socket from "./socket"
 //
+import "alpinejs";
 import "phoenix_html";
 import { Socket } from "phoenix";
 import NProgress from "nprogress";

@@ -25,6 +25,13 @@ defmodule FreshStartWeb.Router do
 
     live "/tasks/:id", TaskLive.Show, :show
     live "/tasks/:id/show/edit", TaskLive.Show, :edit
+
+    live "/areas", AreaLive.Index, :index
+    live "/areas/new", AreaLive.Index, :new
+    live "/areas/:id/edit", AreaLive.Index, :edit
+
+    live "/areas/:id", AreaLive.Show, :show
+    live "/areas/:id/show/edit", AreaLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
