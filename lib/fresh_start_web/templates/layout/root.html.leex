@@ -30,10 +30,10 @@
           x-transition:leave-start="opacity-100"
           x-transition:leave-end="opacity-0"
         >
-          <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+          <div class="absolute inset-0 bg-gray-700 opacity-75"></div>
         </div>
         <div
-          class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-600"
+          class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-700"
           x-show="sidebarOpen"
           x-description="Off-canvas menu, show/hide based on off-canvas menu state."
           x-transition:enter="transition ease-in-out duration-300 transform"
@@ -45,7 +45,7 @@
         >
           <div class="absolute top-0 right-0 -mr-14 p-1">
             <button
-              class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
+              class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-700"
               aria-label="Close sidebar"
               x-show="sidebarOpen"
               @click="sidebarOpen = false"

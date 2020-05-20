@@ -28,6 +28,7 @@ let liveSocket = new LiveSocket("/live", Socket, {
 // Show progress bar on live navigation and form submits
 window.addEventListener("phx:page-loading-start", (info) => NProgress.start());
 window.addEventListener("phx:page-loading-stop", (info) => NProgress.done());
+NProgress.configure({ showSpinner: false });
 
 // connect if there are any LiveViews on the page
 liveSocket.connect();
